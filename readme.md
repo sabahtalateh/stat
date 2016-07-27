@@ -1,27 +1,16 @@
-# Laravel PHP Framework
+# Статистика посещений
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Как запустить у себя
+- Установите Homestead пер прожект https://laravel.com/docs/5.2/homestead#per-project-installation
+- Инициализируйте его ```php vendor/bin/homestead init```
+- Настройте файлик ```Homestead.yml``` который теперь появился в вашем проекте
+- Наберите в папке с проектом vagrant up
+- Зайдите по айпи адресу который указали в ```Homestaed.yml```
+- В админ чать можно зайти если набрать в урле ```/admin?user=admin&password=admin``` вот такая вот сейчас авторизация. Не знаешь не зайдёшь
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Техническая сторона
+В качестве БД используется ```Redis``` и библиотека ```Predis``` https://github.com/nrk/predis в каестве драйвера.
+При получении данных делается много запросов, так что есть смысл переписать получение данных как процедурки на ```Lua```
+Вставляется всё через ```Pipeline``` из ```Predis```, читать им неудобно, так что процедурки это хорошее решение.
+Для масштабирования можно исползовать ```redis-cluster``` в ```Predis``` он поддерживается.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
