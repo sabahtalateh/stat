@@ -1,6 +1,8 @@
 # Статистика посещений
 
 ## Как запустить у себя
+- Клонируйте репозитарий
+- ```composer update```
 - Установите Homestead пер прожект https://laravel.com/docs/5.2/homestead#per-project-installation
 - Инициализируйте его ```php vendor/bin/homestead init```
 - Настройте файлик ```Homestead.yml``` который теперь появился в вашем проекте
