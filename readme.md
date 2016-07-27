@@ -6,7 +6,7 @@
 - Установите Homestead пер прожект https://laravel.com/docs/5.2/homestead#per-project-installation
 - Инициализируйте его ```php vendor/bin/homestead init```
 - Настройте файлик ```Homestead.yml``` который теперь появился в вашем проекте
-- Наберите в папке с проектом vagrant up
+- Наберите в папке с проектом ```vagrant up```
 - Зайдите по айпи адресу который указали в ```Homestaed.yml```
 - В админ чать можно зайти если набрать в урле ```/admin?user=admin&password=admin``` вот такая вот сейчас авторизация. Не знаешь не зайдёшь
 
