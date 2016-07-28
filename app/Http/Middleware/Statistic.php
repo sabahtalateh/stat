@@ -41,17 +41,6 @@ class Statistic
         $storage = app(\App\Components\Statistic\Storage::class);
         $storage->collect($page, $browser, $platform, $ip, $countryCode, $cookie, $time, $referrer);
 
-//        vd(
-//            $page,
-//            $browser,
-//            $platform,
-//            $ip,
-//            $referrer,
-//            $countryCode,
-//            $cookie,
-//            $time
-//        );
-
         return $next($request);
     }
 }
