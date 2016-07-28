@@ -31,10 +31,3 @@ Route::group(['middleware' => 'statistic'], function () {
 Route::group(['middleware' => 'auth.supersimple'], function () {
     Route::get('/admin', 'StatisticController@index');
 });
-
-
-
-Route::get("/ttt", function () {
-    return 11;
-});
-
