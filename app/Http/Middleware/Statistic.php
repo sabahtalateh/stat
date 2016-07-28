@@ -18,9 +18,9 @@ class Statistic
     public function handle($request, Closure $next)
     {
         $page = $request->path();
-        $browser = (\Agent::browser());
-        $platform = (\Agent::platform());
-        $ip = ($request->ip());
+        $browser = \Agent::browser();
+        $platform = \Agent::platform();
+        $ip = $request->ip();
         $referrer = $request->server('HTTP_REFERER');
         $countryCode = \GeoIP::getLocation()['isoCode'];
         $time = microtime(true);
